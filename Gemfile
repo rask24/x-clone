@@ -72,6 +72,9 @@ group :development do
   gem 'syntax_tree-haml'
   gem 'syntax_tree-rbs'
 
+  # Lint your ERB or HTML files [https://github.com/Shopify/erb-lint]
+  gem 'erb_lint', require: false
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
