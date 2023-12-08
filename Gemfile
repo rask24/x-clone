@@ -66,6 +66,12 @@ group :development do
   gem 'rubocop-rspec'
   gem 'rubocop-thread_safety'
 
+  # Required for prettier
+  gem 'prettier_print'
+  gem 'syntax_tree'
+  gem 'syntax_tree-haml'
+  gem 'syntax_tree-rbs'
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
