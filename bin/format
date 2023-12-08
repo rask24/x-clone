@@ -1,0 +1,4 @@
+#!/bin/bash
+
+bin/rubocop $1
+bin/prettier $1
