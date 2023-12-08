@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ "$1" == "--ci" ]; then
+  bundle exec rubocop --parallel
+else
+  bundle exec rubocop --parallel -A
+fi
