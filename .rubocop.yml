@@ -5,8 +5,8 @@ require:
   - rubocop-rspec
   - rubocop-thread_safety
 
-# inherit_from:
-#   - node_modules/@prettier/plugin-ruby/rubocop.yml
+inherit_from:
+  - node_modules/@prettier/plugin-ruby/rubocop.yml
 
 AllCops:
   DisplayCopNames: true
