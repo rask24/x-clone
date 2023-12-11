@@ -61,6 +61,9 @@ group :development, :test do
 end
 
 group :development do
+  # Annotate Rails classes with schema and routes info [https://github.com/ctran/annotate_models]
+  gem 'annotate'
+
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 
