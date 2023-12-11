@@ -49,6 +49,11 @@ gem 'devise'
 gem 'devise-async'
 gem 'devise_invitable'
 
+# Advanced seed data handling for Rails, combining the best practices of several methods together. [https://github.com/mbleigh/seed-fu]
+gem 'seed-fu'
+# A library for generating fake data such as names, addresses, and phone numbers. [https://github.com/faker-ruby/faker]
+gem 'faker'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -61,6 +66,9 @@ group :development, :test do
 end
 
 group :development do
+  # Annotate Rails classes with schema and routes info [https://github.com/ctran/annotate_models]
+  gem 'annotate'
+
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
 
