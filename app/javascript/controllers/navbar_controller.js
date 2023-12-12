@@ -1,7 +1,7 @@
 import { Controller } from '@hotwired/stimulus'
 
 export default class extends Controller {
-  static targets = ['home', 'explore', 'notification']
+  static targets = ['home', 'explore', 'notifications']
 
   connect() {
     const { pathname } = window.location
@@ -13,9 +13,9 @@ export default class extends Controller {
       case '/explore':
         this.activate(this.exploreTarget, 'explore')
         break
-      case '/notification':
+      case '/notifications':
         console.log('not')
-        this.activate(this.notificationTarget, 'notification')
+        this.activate(this.notificationsTarget, 'notifications')
         break
       default:
         break

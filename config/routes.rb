@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :home, only: %i[index]
   resources :explore, only: %i[index]
-  resources :notification, only: %i[index]
+  resources :notifications, only: %i[index]
 
   resources :users, param: :name, path: '/', only: %i[show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
