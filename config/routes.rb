@@ -7,6 +7,9 @@ Rails.application.routes.draw do
                registrations: 'users/registrations',
              }
 
+  root to: redirect('/home')
+
+  resources :home, only: %i[index]
   resources :users, param: :name, path: '/', only: %i[show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
