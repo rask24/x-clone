@@ -1,14 +1,69 @@
-<h1>My page</h1>
-<h2><%= user.name %></h2>
-<h2><%= user.email %></h2>
-<h3>Posts</h2>
-<% if posts.present? %>
-  <ul>
-    <% posts.each do |post| %>
-      <li><%= post.content %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>no posts</p>
-<% end %>
-<%= link_to :home, root_path %>
+<div class="flex justify-between">
+  <div class=" basis-7/12 h-screen overflow-scroll">
+    <div class="flex px-4 pt-1">
+      <div class="flex items-center">
+        <div class="flex justify-center items-center w-10 h-10 rounded-full hover:bg-gray-100 transition duration-200">
+          <div class="w-5">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-z80fyv r-19wmn03" style="color: rgb(15, 20, 25);"><g><path d="M7.414 13l5.043 5.04-1.414 1.42L3.586 12l7.457-7.46 1.414 1.42L7.414 11H21v2H7.414z"></path></g></svg>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col ml-8">
+        <span class="text-xl font-bold">
+          <%= user.name %>
+        </span>
+        <span class="text-gray-500">
+          <%= user.posts.count %> posts
+        </span>
+      </div>
+    </div>
+    <div class="h-40 bg-blue-100"></div>
+    <div class="px-4 pt-4 mb-4">
+      <div class="h-16">
+        <div class="relative bottom-20 flex justify-center items-center w-32 rounded-full bg-white p-1">
+          <%= image_tag 'default_user_icon.png' %>
+        </div>
+      </div>
+
+      <div class="flex flex-col">
+        <span class="text-xl font-bold"><%= user.name %></span>
+        <span class="text-sm text-gray-500">@<%= user.name %></span>
+      </div>
+    </div>
+
+    <div class="flex justify-between h-12 border-b border-gray-100">
+      <div class="basis-1/4 h-auto flex justify-center items-center hover:bg-gray-100 transition duration-200">
+        <div class="px-2 h-12 flex justify-center items-center border-b-4 border-blue-500">
+          <span class="font-bold">Posts</span>
+        </div>
+      </div>
+      <div class="basis-1/4 h-auto flex justify-center items-center hover:bg-gray-100 transition duration-200">
+        <div class="px-2 h-12 flex justify-center items-center">
+          <span class="font-bold">Replies</span>
+        </div>
+      </div>
+      <div class="basis-1/4 h-auto flex justify-center items-center hover:bg-gray-100 transition duration-200">
+        <div class="px-2 h-12 flex justify-center items-center">
+          <span class="font-bold">Highlights</span>
+        </div>
+      </div>
+      <div class="basis-1/4 h-auto flex justify-center items-center hover:bg-gray-100 transition duration-200">
+        <div class="px-2 h-12 flex justify-center items-center">
+          <span class="font-bold">Media</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <% posts.each do |post| %>
+        <%= render 'posts/shared/post', post:, user_name: user.name %>
+      <% end %>
+    </div>
+
+  </div>
+  <div class="flex justify-end basis-5/12 border-l border-gray-100">
+    <div class="w-80">
+
+    </div>
+  </div>
+</div>

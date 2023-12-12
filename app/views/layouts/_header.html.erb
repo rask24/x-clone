@@ -10,7 +10,8 @@
           </div>
         </div>
         <nav class="text-xl" data-controller="navbar">
-          <%= link_to home_index_path, class: 'block w-full group',
+          <%= link_to home_index_path,
+class: 'block w-full group',
                                        data: { navbar_target: 'home' } do %>
             <div class="flex items-center p-4 w-fit rounded-full group-hover:bg-gray-100 transition duration-200">
               <div class="w-7">
@@ -22,7 +23,8 @@
               </div>
             </div>
           <% end %>
-          <%= link_to explore_index_path, class: 'block w-full group',
+          <%= link_to explore_index_path,
+class: 'block w-full group',
                                        data: { navbar_target: 'explore' } do %>
             <div class="flex items-center p-4 w-fit rounded-full group-hover:bg-gray-100 transition duration-200">
               <div class="w-7">
@@ -34,7 +36,8 @@
               </div>
             </div>
           <% end %>
-          <%= link_to notifications_path, class: 'block w-full group',
+          <%= link_to notifications_path,
+class: 'block w-full group',
                                        data: { navbar_target: 'notifications' } do %>
             <div class="flex items-center p-4 w-fit rounded-full group-hover:bg-gray-100 transition duration-200">
               <div class="w-7">
