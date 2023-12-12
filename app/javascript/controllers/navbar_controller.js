@@ -14,7 +14,6 @@ export default class extends Controller {
         this.activate(this.exploreTarget, 'explore')
         break
       case '/notifications':
-        console.log('not')
         this.activate(this.notificationsTarget, 'notifications')
         break
       default:

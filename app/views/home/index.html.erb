@@ -1,4 +1,12 @@
-<% @posts.each do |post| %>
-  <h2><%= link_to post.user.name, user_path(post.user.name) %></h2>
-  <p><%= post.content %></p>
-<% end %>
+<div class="flex justify-between">
+  <div class=" basis-7/12 h-screen overflow-scroll">
+    <% @posts.each do |post| %>
+      <%= render 'posts/shared/post', post:, user_name: post.user.name%>
+    <% end %>
+  </div>
+  <div class="flex justify-end basis-5/12 border-l border-gray-100">
+    <div class="w-80">
+      
+    </div>
+  </div>
+</div>
