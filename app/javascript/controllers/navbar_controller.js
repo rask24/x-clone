@@ -29,10 +29,10 @@ export default class extends Controller {
         this.activate(this.homeTarget, this.homeBoldIconValue)
         break
       case '/explore':
-        this.activate(this.exploreTarget)
+        this.activate(this.exploreTarget, this.exploreBoldIconValue)
         break
       case '/notification':
-        this.activate(this.notificationTarget)
+        this.activate(this.notificationTarget, this.notificationBoldIconValue)
         break
       default:
         break
