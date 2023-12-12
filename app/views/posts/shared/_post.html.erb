@@ -1,0 +1,22 @@
+<div class="px-4 border-b border-gray-100 hover:bg-gray-100 transition duration-200">
+  <div class="flex py-3">
+    <div class="w-10 mr-4">
+      <%= link_to user_path(user_name) do %>
+        <%= image_tag 'default_user_icon.png', class: 'hover:brightness-95 transition duration-200' %>
+      <% end %>
+    </div>
+    <div class="border-gray-100">
+      <%= link_to user_path(user_name) do %>
+        <div class="w-fit">
+          <span class="text-lg font-bold hover:underline transition duration-200">
+            <%= user_name %>
+          </span>
+          <span class="text-sm text-gray-500">
+            @<%= user_name %>
+          </span>
+        </div>
+      <% end %>
+      <p><%= post.content %></p>
+    </div>
+  </div>
+</div>
