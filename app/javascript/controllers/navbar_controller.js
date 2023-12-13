@@ -1,23 +1,23 @@
 import { Controller } from '@hotwired/stimulus'
 
 export default class extends Controller {
-  static targets = ['home', 'explore', 'notifications']
+  static targets = ['home', 'explore', 'notifications', 'profile']
+
+  static values = { currentUser: String }
 
   connect() {
-    const { pathname } = window.location
+    const pathToTargetMap = {
+      '/home': this.homeTarget,
+      '/explore': this.exploreTarget,
+      '/notifications': this.notificationsTarget,
+    }
+    pathToTargetMap[`/${this.currentUserValue}`] = this.profileTarget
 
-    switch (pathname) {
-      case '/home':
-        this.activate(this.homeTarget, 'home')
-        break
-      case '/explore':
-        this.activate(this.exploreTarget, 'explore')
-        break
-      case '/notifications':
-        this.activate(this.notificationsTarget, 'notifications')
-        break
-      default:
-        break
+    const { pathname } = window.location
+    const target = pathToTargetMap[pathname]
+
+    if (target) {
+      this.activate(target, pathname.substring(1))
     }
   }
 
