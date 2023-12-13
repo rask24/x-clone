@@ -4,6 +4,8 @@
 
 import { application } from './application'
 
+import LinkController from './link_controller'
 import NavbarController from './navbar_controller'
 
+application.register('link', LinkController)
 application.register('navbar', NavbarController)
