@@ -1,18 +1,18 @@
 <div class="px-4 border-b border-gray-100 hover:bg-gray-100 transition duration-200">
   <div class="flex py-3">
     <div class="w-10 mr-4">
-      <%= link_to user_path(user_name) do %>
+      <%= link_to user_path(user_name), data: { turbo_frame: '_top' } do %>
         <%= image_tag 'default_user_icon.png', class: 'hover:brightness-95 transition duration-200' %>
       <% end %>
     </div>
     <div class="border-gray-100">
       <div class="w-fit">
-        <%= link_to user_path(user_name) do %>
+        <%= link_to user_path(user_name), data: { turbo_frame: '_top' } do %>
           <span class="text-lg font-bold hover:underline transition duration-200">
             <%= user_name %>
           </span>
         <% end %>
-        <%= link_to user_path(user_name) do %>
+        <%= link_to user_path(user_name), data: { turbo_frame: '_top' } do %>
         <span class="text-sm text-gray-500">
           @<%= user_name %>
         </span>
