@@ -1,7 +1,22 @@
 <div class="flex justify-between">
   <div class=" basis-7/12 h-screen overflow-scroll">
-    <% @posts.each do |post| %>
-      <%= render 'posts/shared/post', post:, user_name: post.user.name %>
+    <div class="flex justify-between h-14 border-b border-gray-100">
+      <div class="basis-1/2 h-auto flex justify-center items-center hover:bg-gray-100 transition duration-200">
+        <div class="px-2 h-14 flex justify-center items-center border-b-4 border-blue-500">
+          <span class="font-bold">For you</span>
+        </div>
+      </div>
+      <div class="basis-1/2 h-auto flex justify-center items-center hover:bg-gray-100 transition duration-200">
+        <div class="px-2 h-14 flex justify-center items-center">
+          <span class="font-bold">Following</span>
+        </div>
+      </div>
+    </div>
+    <%= turbo_frame_tag :post_form, src: new_post_path %>
+    <%= turbo_frame_tag :posts do %>
+      <% @posts.each do |post| %>
+        <%= render 'posts/shared/post', post:, user_name: post.user.name %>
+      <% end %>
     <% end %>
   </div>
   <div class="flex justify-end basis-5/12 border-l border-gray-100">

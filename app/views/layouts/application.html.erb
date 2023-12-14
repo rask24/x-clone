@@ -12,10 +12,14 @@
     <%= javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true %>
   </head>
 
-  <body class="flex justify-center">
-    <%= render 'layouts/header' %>
-    <main class="basis-2/3">
+  <% if user_signed_in? %>
+    <body class="flex justify-center">
+      <%= render 'layouts/header' %>
+      <main class="basis-2/3">
+        <%= yield %>
+      </main>
+    </body>
+  <% else %>
       <%= yield %>
-    </main>
-  </body>
+  <% end %>
 </html>

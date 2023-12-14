@@ -7,12 +7,15 @@ Rails.application.routes.draw do
                registrations: 'users/registrations',
              }
 
-  root to: redirect('/home')
+  root to: 'landing#index'
+
+  resources :landing, only: %i[index]
 
   resources :home, only: %i[index]
   resources :explore, only: %i[index]
   resources :notifications, only: %i[index]
 
+  resources :posts, only: %i[new create]
   resources :users, param: :name, path: '/', only: %i[show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

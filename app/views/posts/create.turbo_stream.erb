@@ -1,0 +1,3 @@
+<%= turbo_stream.prepend :posts do %>
+  <%= render 'posts/shared/post', post: @post, user_name: @post.user.name %>
+<% end %>

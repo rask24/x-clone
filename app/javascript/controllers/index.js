@@ -4,8 +4,10 @@
 
 import { application } from './application'
 
+import FormController from './form_controller'
 import LinkController from './link_controller'
 import NavbarController from './navbar_controller'
 
+application.register('form', FormController)
 application.register('link', LinkController)
 application.register('navbar', NavbarController)

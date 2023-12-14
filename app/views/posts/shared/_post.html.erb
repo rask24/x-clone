@@ -6,18 +6,18 @@
       <% end %>
     </div>
     <div class="border-gray-100">
-        <div class="w-fit">
-          <%= link_to user_path(user_name) do %>
-            <span class="text-lg font-bold hover:underline transition duration-200">
-              <%= user_name %>
-            </span>
-          <% end %>
-          <%= link_to user_path(user_name) do %>
-          <span class="text-sm text-gray-500">
-            @<%= user_name %>
+      <div class="w-fit">
+        <%= link_to user_path(user_name) do %>
+          <span class="text-lg font-bold hover:underline transition duration-200">
+            <%= user_name %>
           </span>
-          <% end %>
-        </div>
+        <% end %>
+        <%= link_to user_path(user_name) do %>
+        <span class="text-sm text-gray-500">
+          @<%= user_name %>
+        </span>
+        <% end %>
+      </div>
       <p><%= post.content %></p>
     </div>
   </div>
