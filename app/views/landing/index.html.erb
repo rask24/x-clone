@@ -8,11 +8,26 @@
   </div>
   <div class="basis-5/12 flex flex-col justify-center p-4">
     <div class="flex flex-col p-5">
-      <div class="my-8">
+      <div class="my-14">
         <span class="text-6xl font-bold h-16 my-4">Happening now</span>
       </div>
-      <div>
+      <div class="mb-10">
         <span class="text-3xl font-bold">Join today.</span>
+      </div>
+      <div>
+        <%= link_to new_user_registration_path, class: 'w-full' do %>
+          <div class="flex justify-center w-72 mb-2 p-2 rounded-full bg-blue-400 hover:bg-blue-500 transition duration-200">
+            <span class="font-bold text-md text-white">Create account</span>
+          </div>
+        <% end %>
+      </div>
+      <div class="mt-12">
+        <span class="font-bold block mb-4">Already have an account?</span>
+        <%= link_to new_user_session_path, class: 'w-full' do %>
+          <div class="flex justify-center w-72 p-2 rounded-full border border-blue-400 hover:bg-blue-100 transition duration-200">
+            <span class="font-bold text-md text-blue-400">Sign in</span>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
