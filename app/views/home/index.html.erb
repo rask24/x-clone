@@ -13,8 +13,10 @@
       </div>
     </div>
     <%= turbo_frame_tag :post_form, src: new_post_path %>
-    <% @posts.each do |post| %>
-      <%= render 'posts/shared/post', post:, user_name: post.user.name %>
+    <%= turbo_frame_tag :posts do %>
+      <% @posts.each do |post| %>
+        <%= render 'posts/shared/post', post:, user_name: post.user.name %>
+      <% end %>
     <% end %>
   </div>
   <div class="flex justify-end basis-5/12 border-l border-gray-100">
