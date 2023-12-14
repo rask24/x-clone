@@ -7,7 +7,9 @@ Rails.application.routes.draw do
                registrations: 'users/registrations',
              }
 
-  root to: redirect('/home')
+  root to: 'landing#index'
+
+  resources :landing, only: %i[index]
 
   resources :home, only: %i[index]
   resources :explore, only: %i[index]
