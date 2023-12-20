@@ -1,0 +1,33 @@
+<div class="px-4 border-b border-gray-100 hover:bg-gray-100 transition duration-200">
+  <div class="flex flex-col py-3">
+    <div class="flex mb-4">
+      <div class="w-10 h-10 mr-4">
+        <%= link_to user_path(user_name), data: { turbo_frame: '_top' } do %>
+          <%= image_tag 'default_user_icon.png', class: 'hover:brightness-95 transition duration-200' %>
+        <% end %>
+      </div>
+      <div class="flex flex-col h-10 w-fit">
+        <%= link_to user_path(user_name), data: { turbo_frame: '_top' } do %>
+          <span class="block h-6 text-lg font-bold hover:underline transition duration-200">
+            <%= user_name %>
+          </span>
+        <% end %>
+        <%= link_to user_path(user_name), data: { turbo_frame: '_top' } do %>
+        <span class=" block h-4 text-sm text-gray-500">
+          @<%= user_name %>
+        </span>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="">
+      <p><%= post.content %></p>
+    </div>
+
+    <div class="flex items-center h-10">
+      <span class="text-gray-500">
+        <%= post.created_at.strftime('%-I:%M %p・%b %-d, %Y') %>
+      </span>
+    </div>
+  </div>
+</div>
