@@ -1,4 +1,9 @@
-<div class="px-4 border-b border-gray-100 hover:bg-gray-100 transition duration-200">
+<%= tag.div class: 'px-4 border-b border-gray-100 hover:bg-gray-100 transition duration-200',
+            data: {
+              controller: 'link',
+              link_url_value: post_path(post),
+              action: 'click->link#visit'
+            } do %>
   <div class="flex py-3">
     <div class="w-10 mr-4">
       <%= link_to user_path(user_name), data: { turbo_frame: '_top' } do %>
@@ -21,4 +26,4 @@
       <p><%= post.content %></p>
     </div>
   </div>
-</div>
+<% end %>
