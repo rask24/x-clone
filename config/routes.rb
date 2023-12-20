@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :explore, only: %i[index]
   resources :notifications, only: %i[index]
 
-  resources :posts, only: %i[new create]
+  resources :posts, only: %i[new create show]
   resources :users, param: :name, path: '/', only: %i[show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
