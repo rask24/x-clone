@@ -2,7 +2,7 @@
   <div class="px-4 border-b border-gray-100">
     <div class="flex py-3">
       <div class="w-10 mr-4">
-        <%= link_to user_path(current_user.name) do %>
+        <%= link_to user_path(current_user.name), data: { turbo_frame: '_top' } do %>
           <%= image_tag 'default_user_icon.png', class: 'hover:brightness-95 transition duration-200' %>
         <% end %>
       </div>
