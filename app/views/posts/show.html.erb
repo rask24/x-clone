@@ -17,7 +17,13 @@
       </div>
     </div>
     <%= render 'posts/post_detail', post: @post, user_name: @post.user.name %>
+    <% if @replies.present? %>
+      <% @replies.each do |reply| %>
+        <%= render 'posts/shared/post', post: reply, user_name: reply.user.name %>
+      <% end %>
+    <% end %>
   </div>
+
 
   <div class="flex justify-start basis-5/12 border-l p-8 border-gray-100">
     <div class="w-80 h-fit rounded-xl bg-gray-50">

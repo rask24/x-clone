@@ -3,6 +3,7 @@
 class PostsController < ApplicationController
   def show
     @post = Post.find params[:id]
+    @replies = Post.find(params[:id]).replies
     @recommended_users = User.recommend
   end
 

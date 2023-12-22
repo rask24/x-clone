@@ -24,8 +24,8 @@
 class Post < ApplicationRecord
   belongs_to :user
 
-  with_options class_name: 'Post' do
-    has_many :replies, foreign_key: :reply_to_id, dependent: :nullify, inverse_of: :parent_post
+  with_options class_name: 'Post', foreign_key: :reply_to_id do
+    has_many :replies, dependent: :nullify, inverse_of: :parent_post
     belongs_to :parent_post, optional: true
   end
 end
