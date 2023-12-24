@@ -26,6 +26,6 @@ class Post < ApplicationRecord
 
   with_options class_name: 'Post', foreign_key: :reply_to_id do
     has_many :replies, dependent: :nullify, inverse_of: :parent_post
-    belongs_to :parent_post, optional: true
+    belongs_to :parent_post, optional: true, inverse_of: :replies
   end
 end
