@@ -18,9 +18,11 @@
     </div>
     <%= render 'post_detail', post:, user_name: post.user.name %>
     <%= render 'reply_form', new_reply: %>
-    <% if replies.present? %>
-      <% replies.each do |reply| %>
-        <%= render 'posts/shared/post', post: reply, user_name: reply.user.name %>
+    <%= turbo_frame_tag :posts do %>
+      <% if replies.present? %>
+        <% replies.each do |reply| %>
+          <%= render 'posts/shared/post', post: reply, user_name: reply.user.name %>
+        <% end %>
       <% end %>
     <% end %>
   </div>
