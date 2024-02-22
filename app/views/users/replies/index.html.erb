@@ -1,4 +1,30 @@
 <%= turbo_frame_tag :user_posts do %>
+  <div class="flex justify-between h-14 border-b border-gray-100">
+    <%= link_to user_posts_path(@user.name),
+                class: "basis-1/4 h-auto flex justify-center items-center hover:bg-gray-100 transition duration-200" do %>
+    <div>
+      <div class="px-2 h-14 flex justify-center items-center">
+        <span class="font-bold">Posts</span>
+      </div>
+    </div>
+    <% end %>
+    <%= link_to user_replies_path(@user.name),
+                class: "basis-1/4 h-auto flex justify-center items-center hover:bg-gray-100 transition duration-200" do %>
+      <div class="px-2 h-14 flex justify-center items-center border-b-4 border-blue-500">
+        <span class="font-bold">Replies</span>
+      </div>
+    <% end %>
+    <div class="basis-1/4 h-auto flex justify-center items-center hover:bg-gray-100 transition duration-200">
+      <div class="px-2 h-14 flex justify-center items-center">
+        <span class="font-bold">Highlights</span>
+      </div>
+    </div>
+    <div class="basis-1/4 h-auto flex justify-center items-center hover:bg-gray-100 transition duration-200">
+      <div class="px-2 h-14 flex justify-center items-center">
+        <span class="font-bold">Media</span>
+      </div>
+    </div>
+  </div>
   <% @posts.each do |post| %>
     <%= render 'posts/shared/post', post:, user_name: @user.name %>
   <% end %>
