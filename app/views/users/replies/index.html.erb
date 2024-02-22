@@ -1,0 +1,5 @@
+<%= turbo_frame_tag :user_posts do %>
+  <% @posts.each do |post| %>
+    <%= render 'posts/shared/post', post:, user_name: @user.name %>
+  <% end %>
+<% end %>

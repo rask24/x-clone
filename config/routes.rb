@@ -16,7 +16,12 @@ Rails.application.routes.draw do
   resources :notifications, only: %i[index]
 
   resources :posts, only: %i[new create show]
-  resources :users, param: :name, path: '/', only: %i[show]
+  resources :users, param: :name, path: '/', only: %i[show] do
+    with_options module: :users do
+      resources :posts, only: :index
+      resources :replies, only: :index
+    end
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
